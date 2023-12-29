@@ -41,9 +41,11 @@ struct ContentView: View {
             ForEach(places) { place in
                 switch place.placeType {
                 case .burger:
+                    // by default Markers are selectable
                     Marker(place.name, coordinate: place.coordinate)
                         .tag(place)
                 case .coffee:
+                    // by default Annotations are NOT selectable
                     Annotation(place.name, coordinate: place.coordinate) {
                      Image(systemName: "cup.and.saucer.fill")
                     }
